@@ -1,0 +1,8 @@
+{
+  "id": "tick_boss",
+  "name": "Bloodsucking Tick",
+  "hp": 500,
+  "immunities": ["physical"],
+  "requiredItems": ["match"],
+  "rewards": { "unlock": ["zone:kitchen"], "currency": { "pennies": 50 } }
+}

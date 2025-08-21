@@ -1,0 +1,11 @@
+{
+  "id": "zone1_store",
+  "items": [
+    { "itemId": "tape", "cost": { "pennies": 25 } },
+    {
+      "itemId": "match",
+      "cost": { "pennies": 50 },
+      "lockedUntil": "boss:tick_boss"
+    }
+  ]
+}

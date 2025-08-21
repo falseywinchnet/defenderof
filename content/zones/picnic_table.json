@@ -1,0 +1,9 @@
+{
+  "id": "picnic_table",
+  "name": "The Picnic Table",
+  "enemies": ["fly"],
+  "actions": ["pester_parents", "attack_flies", "fight_tick"],
+  "store": "zone1_store",
+  "bosses": ["tick_boss"],
+  "rewards": { "unlock": ["zone:kitchen"] }
+}

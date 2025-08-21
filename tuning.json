@@ -1,0 +1,17 @@
+{
+  "enraged": {
+    "fly": { "killsPerSecond": 6, "durationMs": 5000, "hpMultiplier": 2 }
+  },
+  "cooldowns": {
+    "attackFlies": { "base": 8000, "withFlyswatter": 100 }
+  },
+  "boss": {
+    "tick": { "hp": 500, "matchDamage": 250 }
+  },
+  "repair": {
+    "tape": { "flyswatter": 100 }
+  },
+  "pester": {
+    "pester_parents": { "threshold": 40 }
+  }
+}
