@@ -8,6 +8,7 @@ import { drawHud, drawDebug } from './ui/hud';
 import { setupActionBar } from './ui/actionBar';
 import { setupStorePanel } from './ui/storePanel';
 import { setupInventoryPanel } from './ui/inventoryPanel';
+import { setupZoneMap } from './ui/zoneMap';
 import { getKillFeed } from './systems/combat';
 import { addPennies } from './systems/economy';
 
@@ -70,6 +71,7 @@ async function start(): Promise<void> {
 
   setupInventoryPanel(content);
   setupStorePanel(content);
+  setupZoneMap(content);
 
   const element = document.getElementById('game');
   if (element === null) {
