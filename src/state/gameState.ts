@@ -12,6 +12,7 @@ export const gameState: GameState = {
     zoneUnlocks: ['picnic_table'],
     bossUnlocked: [],
     bossDefeated: [],
+    enragedUntil: 0,
   },
   pester: {
     pester_parents: { value: 0, unlocked: false },
