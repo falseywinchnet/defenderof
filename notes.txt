@@ -1,0 +1,1 @@
+- M0-01: Scaffolded Vite + TypeScript project with ESLint and Prettier. Cloudflare Pages deployment planned.
