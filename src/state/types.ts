@@ -13,6 +13,8 @@ export interface PlayerState {
 export interface GameFlags {
   flyKills: number;
   zoneUnlocks: string[];
+  bossUnlocked: string[];
+  bossDefeated: string[];
 }
 
 export interface PesterEntry {

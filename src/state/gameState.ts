@@ -10,6 +10,8 @@ export const gameState: GameState = {
   flags: {
     flyKills: 0,
     zoneUnlocks: ['picnic_table'],
+    bossUnlocked: [],
+    bossDefeated: [],
   },
   pester: {
     pester_parents: { value: 0, unlocked: false },

@@ -1,6 +1,7 @@
 import type { GameContent } from '../content/load';
 import type { Enemy } from '../content/schema';
 import { gameState } from '../state/gameState';
+import { checkBossUnlock } from './progression';
 
 interface EnemyInstance {
   id: string;
@@ -27,6 +28,7 @@ function rewardKill(enemy: Enemy): void {
   killFeed.push('Defeated ' + enemy.name);
   if (enemy.id === 'fly') {
     gameState.flags.flyKills = gameState.flags.flyKills + 1;
+    checkBossUnlock();
   }
 }
 

@@ -8,3 +8,4 @@
 - M0-08: Added combat system with attacks, bounty rewards, and kill feed demo.
 - M0-09: Added pester system with weighted increments and unlock reward.
 - M0-10: Added economy system with purchases and durability repair. Store locks ignored.
+- M0-11: Added progression system; boss unlocks at 100 fly kills and Kitchen zone opens after victory.
