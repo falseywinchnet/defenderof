@@ -7,3 +7,4 @@
 - M0-07: Added content loader with validation and error overlay.
 - M0-08: Added combat system with attacks, bounty rewards, and kill feed demo.
 - M0-09: Added pester system with weighted increments and unlock reward.
+- M0-10: Added economy system with purchases and durability repair. Store locks ignored.

@@ -11,6 +11,7 @@ import {
   getKillFeed,
 } from './systems/combat';
 import { pester } from './systems/pester';
+import { addPennies, purchaseItem, useItem } from './systems/economy';
 
 class DemoScene implements Scene {
   private x: number;
@@ -43,9 +44,21 @@ class DemoScene implements Scene {
       drawText(context, 'Pester Unlocked', 20, 140);
     }
     const feed = getKillFeed();
+    let lineY = 160;
     for (let i = 0; i < feed.length; i = i + 1) {
-      const lineY = 160 + i * 20;
       drawText(context, feed[i], 20, lineY);
+      lineY = lineY + 20;
+    }
+    const inventory = gameState.player.inventory;
+    for (let i = 0; i < inventory.length; i = i + 1) {
+      const item = inventory[i];
+      const itemText = item.id + ' x' + item.quantity;
+      drawText(context, itemText, 20, lineY);
+      if (item.durability !== undefined) {
+        const durText = 'Durability: ' + item.durability;
+        drawText(context, durText, 160, lineY);
+      }
+      lineY = lineY + 20;
     }
   }
 }
@@ -70,6 +83,15 @@ async function start(): Promise<void> {
   spawnEnemy('fly', content);
   spawnEnemy('fly', content);
   attackGroup('fly', 8, content);
+
+  gameState.player.inventory.push({
+    id: 'flyswatter',
+    quantity: 1,
+    durability: 50,
+  });
+  addPennies(100);
+  purchaseItem('zone1_store', 'tape', content);
+  useItem('tape', content);
 
   const element = document.getElementById('game');
   if (element === null) {
