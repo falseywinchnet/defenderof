@@ -11,7 +11,7 @@ M0-10 DONE 2025-08-21 02:08 - Added economy system
 M0-11 DONE 2025-08-21 02:16 - Progression system unlocks boss and Kitchen zone
 M0-12 DONE 2025-08-21 02:22 - Added cooldown manager
 M0-13 DONE 2025-08-21 02:30 - Enraged flies require two hits
-M0-14 TODO 0000-00-00 00:00 -
+M0-14 DONE 2025-08-21 02:37 - HUD and debug overlay
 M0-15 TODO 0000-00-00 00:00 -
 M0-16 TODO 0000-00-00 00:00 -
 M0-17 TODO 0000-00-00 00:00 -
