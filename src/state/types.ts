@@ -15,6 +15,7 @@ export interface GameFlags {
   zoneUnlocks: string[];
   bossUnlocked: string[];
   bossDefeated: string[];
+  enragedUntil: number;
 }
 
 export interface PesterEntry {

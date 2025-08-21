@@ -10,3 +10,4 @@
 - M0-10: Added economy system with purchases and durability repair. Store locks ignored.
 - M0-11: Added progression system; boss unlocks at 100 fly kills and Kitchen zone opens after victory.
 - M0-12: Added cooldown manager and demo pester cooldown.
+- M0-13: Enraged flies trigger after rapid kills; require two hits and expire after five seconds.
