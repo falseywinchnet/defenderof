@@ -1,5 +1,6 @@
 import { Rng } from './rng';
 import { clear } from './render';
+import { updateCooldowns } from '../systems/cooldown';
 
 export interface Scene {
   update(delta: number, rng: Rng): void;
@@ -31,6 +32,7 @@ export class Game {
   private loop(timestamp: number): void {
     const delta = (timestamp - this.previous) / 1000;
     this.previous = timestamp;
+    updateCooldowns(delta * 1000);
     this.current.update(delta, this.rng);
     clear(this.context);
     this.current.draw(this.context);

@@ -16,4 +16,5 @@ export const gameState: GameState = {
   pester: {
     pester_parents: { value: 0, unlocked: false },
   },
+  cooldowns: {},
 };

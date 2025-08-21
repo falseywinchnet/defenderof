@@ -27,4 +27,5 @@ export interface GameState {
   currentZone: string;
   flags: GameFlags;
   pester: Record<string, PesterEntry>;
+  cooldowns: Record<string, number>;
 }
