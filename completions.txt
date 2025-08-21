@@ -7,7 +7,7 @@ M0-06 DONE 2025-08-21 01:42 - Added initial content JSON and tuning
 M0-07 DONE 2025-08-21 01:49 - Content loader validates JSON and shows overlay on failure
 M0-08 DONE 2025-08-21 01:53 - Basic combat system with kill feed
 M0-09 DONE 2025-08-21 02:01 - Added weighted pester system
-M0-10 TODO 0000-00-00 00:00 -
+M0-10 DONE 2025-08-21 02:08 - Added economy system
 M0-11 TODO 0000-00-00 00:00 -
 M0-12 TODO 0000-00-00 00:00 -
 M0-13 TODO 0000-00-00 00:00 -
