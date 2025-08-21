@@ -5,3 +5,4 @@
 - M0-05: Implemented Zod validators for content schemas.
 - M0-06: Created initial content JSON and tuning; store prices in pennies.
 - M0-07: Added content loader with validation and error overlay.
+- M0-08: Added combat system with attacks, bounty rewards, and kill feed demo.
