@@ -11,6 +11,7 @@ import {
   getKillFeed,
 } from './systems/combat';
 import { pester } from './systems/pester';
+import { startCooldown, isOnCooldown } from './systems/cooldown';
 import { addPennies, purchaseItem, useItem } from './systems/economy';
 import { markBossDefeated } from './systems/progression';
 
@@ -27,7 +28,11 @@ class DemoScene implements Scene {
     if (this.x > 100) {
       this.x = 20;
     }
-    pester('pester_parents', rng);
+    const onCooldown = isOnCooldown('pester_parents');
+    if (!onCooldown) {
+      pester('pester_parents', rng);
+      startCooldown('pester_parents', 1000);
+    }
   }
 
   draw(context: CanvasRenderingContext2D): void {
