@@ -1,3 +1,29 @@
+import { Game, Scene } from './engine/game';
+import type { Rng } from './engine/rng';
+import { drawText } from './engine/render';
+
+class DemoScene implements Scene {
+  private x: number;
+
+  constructor() {
+    this.x = 20;
+  }
+
+  update(delta: number, rng: Rng): void {
+    const step = rng.next() * 60;
+    this.x = this.x + step * delta;
+    if (this.x > 100) {
+      this.x = 20;
+    }
+  }
+
+  draw(context: CanvasRenderingContext2D): void {
+    context.fillStyle = 'white';
+    context.fillRect(this.x, 20, 20, 20);
+    drawText(context, 'Demo', 20, 60);
+  }
+}
+
 function start(): void {
   const element = document.getElementById('game');
   if (element === null) {
@@ -19,26 +45,9 @@ function start(): void {
   resize();
   window.addEventListener('resize', resize);
 
-  let previous = performance.now();
-
-  function update(delta: number): void {
-    Math.sin(delta);
-  }
-
-  function draw(): void {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    // draw game state
-  }
-
-  function loop(timestamp: number): void {
-    const delta = (timestamp - previous) / 1000;
-    previous = timestamp;
-    update(delta);
-    draw();
-    requestAnimationFrame(loop);
-  }
-
-  requestAnimationFrame(loop);
+  const scene = new DemoScene();
+  const game = new Game(context, scene, 1);
+  game.start();
 }
 
 start();
