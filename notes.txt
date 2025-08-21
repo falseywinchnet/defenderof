@@ -1,3 +1,4 @@
 - M0-01: Scaffolded Vite + TypeScript project with ESLint and Prettier. Cloudflare Pages deployment planned.
 - M0-02: Added canvas bootstrap and basic game loop.
 - M0-03: Introduced Game engine with scene management, render helpers, and seeded RNG.
+- M0-04: Added global game state store and basic zone display.

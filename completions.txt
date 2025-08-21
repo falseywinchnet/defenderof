@@ -1,7 +1,7 @@
 M0-01 DONE 2025-08-21 01:13 - Vite+TS scaffold
 M0-02 DONE 2025-08-21 01:19 - Canvas bootstrap and game loop
 M0-03 DONE 2025-08-21 01:25 - engine core with scene switching and RNG
-M0-04 TODO 0000-00-00 00:00 -
+M0-04 DONE 2025-08-21 01:33 - global game state skeleton
 M0-05 TODO 0000-00-00 00:00 -
 M0-06 TODO 0000-00-00 00:00 -
 M0-07 TODO 0000-00-00 00:00 -

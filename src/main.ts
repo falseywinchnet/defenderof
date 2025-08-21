@@ -1,6 +1,7 @@
 import { Game, Scene } from './engine/game';
 import type { Rng } from './engine/rng';
 import { drawText } from './engine/render';
+import { gameState } from './state/gameState';
 
 class DemoScene implements Scene {
   private x: number;
@@ -21,6 +22,8 @@ class DemoScene implements Scene {
     context.fillStyle = 'white';
     context.fillRect(this.x, 20, 20, 20);
     drawText(context, 'Demo', 20, 60);
+    const zoneText = 'Zone: ' + gameState.currentZone;
+    drawText(context, zoneText, 20, 80);
   }
 }
 
