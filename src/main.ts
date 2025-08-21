@@ -5,16 +5,9 @@ import { gameState } from './state/gameState';
 import { loadContent, type GameContent } from './content/load';
 import { showOverlay } from './ui/overlay';
 import { drawHud, drawDebug } from './ui/hud';
-import {
-  spawnEnemy,
-  attackSingle,
-  attackGroup,
-  getKillFeed,
-} from './systems/combat';
-import { pester } from './systems/pester';
-import { startCooldown, isOnCooldown } from './systems/cooldown';
-import { addPennies, purchaseItem, useItem } from './systems/economy';
-import { markBossDefeated } from './systems/progression';
+import { setupActionBar } from './ui/actionBar';
+import { getKillFeed } from './systems/combat';
+import { addPennies } from './systems/economy';
 
 class DemoScene implements Scene {
   private x: number;
@@ -30,11 +23,6 @@ class DemoScene implements Scene {
     this.x = this.x + step * delta;
     if (this.x > 100) {
       this.x = 20;
-    }
-    const onCooldown = isOnCooldown('pester_parents');
-    if (!onCooldown) {
-      pester('pester_parents', rng);
-      startCooldown('pester_parents', 1000);
     }
     if (delta > 0) {
       this.fps = 1 / delta;
@@ -82,21 +70,12 @@ async function start(): Promise<void> {
     return;
   }
 
-  spawnEnemy('fly', content);
-  attackSingle('fly', 8, content);
-  spawnEnemy('fly', content);
-  spawnEnemy('fly', content);
-  attackGroup('fly', 8, content);
-
   gameState.player.inventory.push({
     id: 'flyswatter',
     quantity: 1,
     durability: 50,
   });
   addPennies(100);
-  purchaseItem('zone1_store', 'tape', content);
-  useItem('tape', content);
-  markBossDefeated('tick_boss', content);
 
   const element = document.getElementById('game');
   if (element === null) {
@@ -120,6 +99,7 @@ async function start(): Promise<void> {
 
   const scene = new DemoScene();
   const game = new Game(context, scene, 1);
+  setupActionBar(content, game);
   game.start();
 }
 

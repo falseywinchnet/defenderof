@@ -12,3 +12,4 @@
 - M0-12: Added cooldown manager and demo pester cooldown.
 - M0-13: Enraged flies trigger after rapid kills; require two hits and expire after five seconds.
 - M0-14: HUD displays HP, pennies, zone; debug overlay shows FPS, flags, enraged timer.
+- M0-15: Added action bar with Attack, Pester, and Tick buttons showing cooldowns.
