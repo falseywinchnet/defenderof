@@ -2,8 +2,14 @@ import { Game, Scene } from './engine/game';
 import type { Rng } from './engine/rng';
 import { drawText } from './engine/render';
 import { gameState } from './state/gameState';
-import { loadContent } from './content/load';
+import { loadContent, type GameContent } from './content/load';
 import { showOverlay } from './ui/overlay';
+import {
+  spawnEnemy,
+  attackSingle,
+  attackGroup,
+  getKillFeed,
+} from './systems/combat';
 
 class DemoScene implements Scene {
   private x: number;
@@ -26,12 +32,20 @@ class DemoScene implements Scene {
     drawText(context, 'Demo', 20, 60);
     const zoneText = 'Zone: ' + gameState.currentZone;
     drawText(context, zoneText, 20, 80);
+    const penniesText = 'Pennies: ' + gameState.player.pennies;
+    drawText(context, penniesText, 20, 100);
+    const feed = getKillFeed();
+    for (let i = 0; i < feed.length; i = i + 1) {
+      const lineY = 120 + i * 20;
+      drawText(context, feed[i], 20, lineY);
+    }
   }
 }
 
 async function start(): Promise<void> {
+  let content: GameContent;
   try {
-    await loadContent();
+    content = await loadContent();
   } catch (e) {
     let message: string;
     if (e instanceof Error) {
@@ -42,6 +56,12 @@ async function start(): Promise<void> {
     showOverlay(message);
     return;
   }
+
+  spawnEnemy('fly', content);
+  attackSingle('fly', 8, content);
+  spawnEnemy('fly', content);
+  spawnEnemy('fly', content);
+  attackGroup('fly', 8, content);
 
   const element = document.getElementById('game');
   if (element === null) {
