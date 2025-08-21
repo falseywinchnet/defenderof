@@ -6,3 +6,4 @@
 - M0-06: Created initial content JSON and tuning; store prices in pennies.
 - M0-07: Added content loader with validation and error overlay.
 - M0-08: Added combat system with attacks, bounty rewards, and kill feed demo.
+- M0-09: Added pester system with weighted increments and unlock reward.

@@ -15,8 +15,14 @@ export interface GameFlags {
   zoneUnlocks: string[];
 }
 
+export interface PesterEntry {
+  value: number;
+  unlocked: boolean;
+}
+
 export interface GameState {
   player: PlayerState;
   currentZone: string;
   flags: GameFlags;
+  pester: Record<string, PesterEntry>;
 }

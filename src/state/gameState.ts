@@ -11,4 +11,7 @@ export const gameState: GameState = {
     flyKills: 0,
     zoneUnlocks: ['picnic_table'],
   },
+  pester: {
+    pester_parents: { value: 0, unlocked: false },
+  },
 };
