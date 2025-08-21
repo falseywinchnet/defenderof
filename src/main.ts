@@ -4,6 +4,7 @@ import { drawText } from './engine/render';
 import { gameState } from './state/gameState';
 import { loadContent, type GameContent } from './content/load';
 import { showOverlay } from './ui/overlay';
+import { drawHud, drawDebug } from './ui/hud';
 import {
   spawnEnemy,
   attackSingle,
@@ -17,9 +18,11 @@ import { markBossDefeated } from './systems/progression';
 
 class DemoScene implements Scene {
   private x: number;
+  private fps: number;
 
   constructor() {
     this.x = 20;
+    this.fps = 0;
   }
 
   update(delta: number, rng: Rng): void {
@@ -33,22 +36,15 @@ class DemoScene implements Scene {
       pester('pester_parents', rng);
       startCooldown('pester_parents', 1000);
     }
+    if (delta > 0) {
+      this.fps = 1 / delta;
+    }
   }
 
   draw(context: CanvasRenderingContext2D): void {
     context.fillStyle = 'white';
     context.fillRect(this.x, 20, 20, 20);
     drawText(context, 'Demo', 20, 60);
-    const zoneText = 'Zone: ' + gameState.currentZone;
-    drawText(context, zoneText, 20, 80);
-    const penniesText = 'Pennies: ' + gameState.player.pennies;
-    drawText(context, penniesText, 20, 100);
-    const pesterEntry = gameState.pester['pester_parents'];
-    const pesterText = 'Pester: ' + pesterEntry.value;
-    drawText(context, pesterText, 20, 120);
-    if (pesterEntry.unlocked) {
-      drawText(context, 'Pester Unlocked', 20, 140);
-    }
     const feed = getKillFeed();
     let lineY = 160;
     for (let i = 0; i < feed.length; i = i + 1) {
@@ -66,6 +62,8 @@ class DemoScene implements Scene {
       }
       lineY = lineY + 20;
     }
+    drawHud(context);
+    drawDebug(context, this.fps);
   }
 }
 

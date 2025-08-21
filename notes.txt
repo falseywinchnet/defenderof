@@ -11,3 +11,4 @@
 - M0-11: Added progression system; boss unlocks at 100 fly kills and Kitchen zone opens after victory.
 - M0-12: Added cooldown manager and demo pester cooldown.
 - M0-13: Enraged flies trigger after rapid kills; require two hits and expire after five seconds.
+- M0-14: HUD displays HP, pennies, zone; debug overlay shows FPS, flags, enraged timer.
