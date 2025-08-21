@@ -16,3 +16,4 @@
 - M0-16: Added store and inventory panels with purchase confirmation.
 - M0-17: Added zone map with two nodes; Kitchen button stays disabled until unlocked.
 - M0-18: Added localStorage save/load system with versioned slots.
+- M0-19: Manual smoke tests require a browser; cannot run in this environment. Added 404 page and Cloudflare Pages deployment notes.

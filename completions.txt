@@ -16,15 +16,15 @@ M0-15 DONE 2025-08-21 02:41 - Added action bar buttons with cooldowns
 M0-16 DONE 2025-08-21 02:55 - Store and inventory panels with purchase confirmation
 M0-17 DONE 2025-08-21 03:01 - Added zone map for Picnic Table and Kitchen
 M0-18 DONE 2025-08-21 03:08 - Added localStorage save/load
-M0-19 TODO 0000-00-00 00:00 -
+M0-19 BLOCKED 2025-08-21 03:14 - Manual smoke tests require browser environment
 M0-20 TODO 0000-00-00 00:00 -
-T-01 TODO 0000-00-00 00:00 -
-T-02 TODO 0000-00-00 00:00 -
-T-03 TODO 0000-00-00 00:00 -
-T-04 TODO 0000-00-00 00:00 -
-T-05 TODO 0000-00-00 00:00 -
-T-06 TODO 0000-00-00 00:00 -
-T-07 TODO 0000-00-00 00:00 -
+T-01 BLOCKED 2025-08-21 03:14 - Requires browser
+T-02 BLOCKED 2025-08-21 03:14 - Requires browser
+T-03 BLOCKED 2025-08-21 03:14 - Requires browser
+T-04 BLOCKED 2025-08-21 03:14 - Requires browser
+T-05 BLOCKED 2025-08-21 03:14 - Requires browser
+T-06 BLOCKED 2025-08-21 03:14 - Requires browser
+T-07 BLOCKED 2025-08-21 03:14 - Requires browser
 M1-01 TODO 0000-00-00 00:00 -
 M1-02 TODO 0000-00-00 00:00 -
 M1-03 TODO 0000-00-00 00:00 -
