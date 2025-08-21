@@ -13,7 +13,7 @@ M0-12 DONE 2025-08-21 02:22 - Added cooldown manager
 M0-13 DONE 2025-08-21 02:30 - Enraged flies require two hits
 M0-14 DONE 2025-08-21 02:37 - HUD and debug overlay
 M0-15 DONE 2025-08-21 02:41 - Added action bar buttons with cooldowns
-M0-16 TODO 0000-00-00 00:00 -
+M0-16 DONE 2025-08-21 02:55 - Store and inventory panels with purchase confirmation
 M0-17 TODO 0000-00-00 00:00 -
 M0-18 TODO 0000-00-00 00:00 -
 M0-19 TODO 0000-00-00 00:00 -
