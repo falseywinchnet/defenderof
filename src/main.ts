@@ -11,6 +11,7 @@ import { setupInventoryPanel } from './ui/inventoryPanel';
 import { setupZoneMap } from './ui/zoneMap';
 import { getKillFeed } from './systems/combat';
 import { addPennies } from './systems/economy';
+import { loadGame, saveGame, autoSave } from './systems/save';
 
 class DemoScene implements Scene {
   private x: number;
@@ -62,12 +63,18 @@ async function start(): Promise<void> {
     return;
   }
 
-  gameState.player.inventory.push({
-    id: 'flyswatter',
-    quantity: 1,
-    durability: 50,
-  });
-  addPennies(100);
+  const loaded = loadGame(1);
+  if (loaded !== null) {
+    Object.assign(gameState, loaded);
+  } else {
+    gameState.player.inventory.push({
+      id: 'flyswatter',
+      quantity: 1,
+      durability: 50,
+    });
+    addPennies(100);
+    saveGame(1, gameState);
+  }
 
   setupInventoryPanel(content);
   setupStorePanel(content);
@@ -96,6 +103,7 @@ async function start(): Promise<void> {
   const scene = new DemoScene();
   const game = new Game(context, scene, 1);
   setupActionBar(content, game);
+  autoSave(1, 5000);
   game.start();
 }
 
