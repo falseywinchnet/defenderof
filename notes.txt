@@ -4,3 +4,4 @@
 - M0-04: Added global game state store and basic zone display.
 - M0-05: Implemented Zod validators for content schemas.
 - M0-06: Created initial content JSON and tuning; store prices in pennies.
+- M0-07: Added content loader with validation and error overlay.

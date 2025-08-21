@@ -2,6 +2,8 @@ import { Game, Scene } from './engine/game';
 import type { Rng } from './engine/rng';
 import { drawText } from './engine/render';
 import { gameState } from './state/gameState';
+import { loadContent } from './content/load';
+import { showOverlay } from './ui/overlay';
 
 class DemoScene implements Scene {
   private x: number;
@@ -27,7 +29,20 @@ class DemoScene implements Scene {
   }
 }
 
-function start(): void {
+async function start(): Promise<void> {
+  try {
+    await loadContent();
+  } catch (e) {
+    let message: string;
+    if (e instanceof Error) {
+      message = e.message;
+    } else {
+      message = String(e);
+    }
+    showOverlay(message);
+    return;
+  }
+
   const element = document.getElementById('game');
   if (element === null) {
     throw new Error('Canvas element not found');
