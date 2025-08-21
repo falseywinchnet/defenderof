@@ -1,0 +1,10 @@
+{
+  "id": "tape",
+  "name": "Tape",
+  "type": "consumable",
+  "damage": 0,
+  "cooldownMs": 0,
+  "consumable": true,
+  "requirements": [],
+  "effects": { "repair": { "itemId": "flyswatter", "amount": 100 } }
+}

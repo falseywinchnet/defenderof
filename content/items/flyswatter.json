@@ -1,0 +1,11 @@
+{
+  "id": "flyswatter",
+  "name": "Flyswatter",
+  "type": "weapon",
+  "damage": 8,
+  "cooldownMs": 100,
+  "durability": 200,
+  "consumable": false,
+  "requirements": [],
+  "effects": {}
+}

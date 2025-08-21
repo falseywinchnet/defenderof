@@ -1,0 +1,10 @@
+{
+  "id": "fly",
+  "name": "Fly",
+  "hp": 8,
+  "damagePerHit": 0,
+  "onHitPlayer": { "flat": 0, "dot": 0 },
+  "bounty": { "pennies": 1 },
+  "tags": ["swarm", "bug"],
+  "behaviors": { "enragedMultiplier": 2 }
+}

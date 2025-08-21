@@ -1,0 +1,11 @@
+{
+  "id": "match",
+  "name": "Match",
+  "type": "consumable",
+  "damage": 250,
+  "cooldownMs": 0,
+  "durability": 1,
+  "consumable": true,
+  "requirements": [],
+  "effects": {}
+}
