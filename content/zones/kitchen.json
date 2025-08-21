@@ -1,0 +1,9 @@
+{
+  "id": "kitchen",
+  "name": "The Kitchen",
+  "enemies": [],
+  "actions": [],
+  "store": "zone1_store",
+  "bosses": [],
+  "rewards": { "unlock": [] }
+}

@@ -12,6 +12,7 @@ import {
 } from './systems/combat';
 import { pester } from './systems/pester';
 import { addPennies, purchaseItem, useItem } from './systems/economy';
+import { markBossDefeated } from './systems/progression';
 
 class DemoScene implements Scene {
   private x: number;
@@ -92,6 +93,7 @@ async function start(): Promise<void> {
   addPennies(100);
   purchaseItem('zone1_store', 'tape', content);
   useItem('tape', content);
+  markBossDefeated('tick_boss', content);
 
   const element = document.getElementById('game');
   if (element === null) {
