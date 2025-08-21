@@ -6,6 +6,8 @@ import { loadContent, type GameContent } from './content/load';
 import { showOverlay } from './ui/overlay';
 import { drawHud, drawDebug } from './ui/hud';
 import { setupActionBar } from './ui/actionBar';
+import { setupStorePanel } from './ui/storePanel';
+import { setupInventoryPanel } from './ui/inventoryPanel';
 import { getKillFeed } from './systems/combat';
 import { addPennies } from './systems/economy';
 
@@ -39,17 +41,6 @@ class DemoScene implements Scene {
       drawText(context, feed[i], 20, lineY);
       lineY = lineY + 20;
     }
-    const inventory = gameState.player.inventory;
-    for (let i = 0; i < inventory.length; i = i + 1) {
-      const item = inventory[i];
-      const itemText = item.id + ' x' + item.quantity;
-      drawText(context, itemText, 20, lineY);
-      if (item.durability !== undefined) {
-        const durText = 'Durability: ' + item.durability;
-        drawText(context, durText, 160, lineY);
-      }
-      lineY = lineY + 20;
-    }
     drawHud(context);
     drawDebug(context, this.fps);
   }
@@ -76,6 +67,9 @@ async function start(): Promise<void> {
     durability: 50,
   });
   addPennies(100);
+
+  setupInventoryPanel(content);
+  setupStorePanel(content);
 
   const element = document.getElementById('game');
   if (element === null) {
