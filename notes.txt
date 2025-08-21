@@ -15,3 +15,4 @@
 - M0-15: Added action bar with Attack, Pester, and Tick buttons showing cooldowns.
 - M0-16: Added store and inventory panels with purchase confirmation.
 - M0-17: Added zone map with two nodes; Kitchen button stays disabled until unlocked.
+- M0-18: Added localStorage save/load system with versioned slots.
