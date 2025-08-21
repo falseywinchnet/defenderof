@@ -10,6 +10,7 @@ import {
   attackGroup,
   getKillFeed,
 } from './systems/combat';
+import { pester } from './systems/pester';
 
 class DemoScene implements Scene {
   private x: number;
@@ -24,6 +25,7 @@ class DemoScene implements Scene {
     if (this.x > 100) {
       this.x = 20;
     }
+    pester('pester_parents', rng);
   }
 
   draw(context: CanvasRenderingContext2D): void {
@@ -34,9 +36,15 @@ class DemoScene implements Scene {
     drawText(context, zoneText, 20, 80);
     const penniesText = 'Pennies: ' + gameState.player.pennies;
     drawText(context, penniesText, 20, 100);
+    const pesterEntry = gameState.pester['pester_parents'];
+    const pesterText = 'Pester: ' + pesterEntry.value;
+    drawText(context, pesterText, 20, 120);
+    if (pesterEntry.unlocked) {
+      drawText(context, 'Pester Unlocked', 20, 140);
+    }
     const feed = getKillFeed();
     for (let i = 0; i < feed.length; i = i + 1) {
-      const lineY = 120 + i * 20;
+      const lineY = 160 + i * 20;
       drawText(context, feed[i], 20, lineY);
     }
   }
