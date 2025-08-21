@@ -4,7 +4,7 @@ M0-03 DONE 2025-08-21 01:25 - engine core with scene switching and RNG
 M0-04 DONE 2025-08-21 01:33 - global game state skeleton
 M0-05 DONE 2025-08-21 01:34 - Added Zod content schemas
 M0-06 DONE 2025-08-21 01:42 - Added initial content JSON and tuning
-M0-07 TODO 0000-00-00 00:00 -
+M0-07 DONE 2025-08-21 01:49 - Content loader validates JSON and shows overlay on failure
 M0-08 TODO 0000-00-00 00:00 -
 M0-09 TODO 0000-00-00 00:00 -
 M0-10 TODO 0000-00-00 00:00 -
